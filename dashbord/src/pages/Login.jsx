@@ -1,12 +1,12 @@
 import React from 'react'
+import { Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    </div>
+  <div>
+
+    
+  </div>
   )
 }
 
