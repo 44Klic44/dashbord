@@ -1,5 +1,41 @@
 import React from "react"
-import { Navigate } from "react-router-dom"
+import { Routes, Route, Navigate, Outlet, useLocation, replace } from 'react-router-dom'
+import Login from "../../dashbord/src/pages/Login"
+import Dashboard from "../../dashbord/src/pages/Dashboard"
+import Users from "../../dashbord/src/pages/Users"
+import Tasks from "../../dashbord/src/pages/Tasks"
+import Trash from "../../dashbord/src/pages/Trash"
+import TaskDetails from "../../dashbord/src/pages/TaskDetails"
+import { Toaster } from "sonner"
+
+
+
+function Layout(){
+  const user =""
+  const location = useLocation()
+  return user ? (
+  <div className="w-full h-screen flex flex-col md:flex-row">
+<div className="w-1/5 b-screen bg-white sticky top-0 hidden md:block">
+ {/* <Sidebar/> */}
+</div>
+
+
+ {/* <MobileSidebar/> */}
+
+<div className="flex-1 overflow-y-auto"> 
+{/* <Navbar/> */}
+</div>
+
+<div className="p-4 2x1:px-10">
+  {/* <Outlet/> */}
+</div>
+
+
+  </div>
+  ):(
+    <Navigate to="/log-in" state={{from: location}} replace/>
+  )
+}
 
 function App() {
 
@@ -18,8 +54,11 @@ function App() {
               <Route path="/trashed" element={< Trash/> }/>
               <Route path="/task/:id" element={< TaskDetails/> }/>
         </Route>
-  
+
+
+          <Route path="/log-in" element={< Login/> }/>
        </Routes>
+       <Toaster richColors/>
       </main>
   )
 }
