@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom'
-
+import Textbox from '../components/Textbox';
+import Button from '../components/Button';
 const Login = () => {
   const user =""
 const {
@@ -60,8 +61,51 @@ user && navigate("/Dashboard")
                 Keep all your credetials safe!
               </p>
             </div>
-            
-           
+
+
+            <div className='flex flex-col gap-y-5'>
+
+              <Textbox
+                placeholder='you@example.com'
+                type='email'
+                name='email'
+                label='Email Address'
+                className='w-full rounded-full'
+                register={register("email", {
+                  required: "Email Address is required!",
+                })}
+                error={errors.email ? errors.email.message : ""}
+              />
+
+
+              <Textbox
+                placeholder='password'
+                type='password'
+                name='password'
+                label='Password'
+                className='w-full rounded-full'
+                register={register("password", {
+                  required: "Password is required!",
+                })}
+                error={errors.password ? errors.password?.message : ""}
+              />
+              <span className='text-sm text-gray-600 hover:underline cursor-pointer'>
+                Forget Password?
+              </span>
+            </div>
+
+
+
+
+            {/* {isLoading ? (
+              <Loading />
+            ) : ( */}
+              <Button
+                type='submit'
+                label='Log in'
+                className='w-full h-10 bg-blue-700 text-white rounded-full'
+              />
+            {/* )} */}
           </form>
         </div>
     </div>

@@ -1,11 +1,11 @@
 import React from "react"
 import { Routes, Route, Navigate, Outlet, useLocation, replace } from 'react-router-dom'
-import Login from "../../dashbord/src/pages/Login"
-import Dashboard from "../../dashbord/src/pages/Dashboard"
-import Users from "../../dashbord/src/pages/Users"
-import Tasks from "../../dashbord/src/pages/Tasks"
-import Trash from "../../dashbord/src/pages/Trash"
-import TaskDetails from "../../dashbord/src/pages/TaskDetails"
+import Login from "./pages/Login"
+import Dashboard from "./pages/Dashboard"
+import Users from "./pages/Users"
+import Tasks from "./pages/Tasks"
+import Trash from "./pages/Trash"
+import TaskDetails from "./pages/TaskDetails"
 import { Toaster } from "sonner"
 
 
